@@ -41,7 +41,7 @@ See [Dockerfile](Dockerfile) for default values.
 `everpeace:word2vec-jawiki` docker image contains word2vec tools.  So you can try `distance` or `worde-analyze` on your word embedding like below once you build them.
 
 ```
-$ docker run -v <output_directory>:/var/jawiki everpeace/word2vec-jawiki word-analogy /var/jawiki/vector_jawiki.bin
+$ docker run -it -v <output_directory>:/var/jawiki everpeace/word2vec-jawiki word-analogy /var/jawiki/vector_jawiki.bin
 
-$ docker run -v <output_directory>:/var/jawiki everpeace/word2vec-jawiki distance /var/jawiki/vector_jawiki.bin
+$ docker run -it -v <output_directory>:/var/jawiki everpeace/word2vec-jawiki distance /var/jawiki/vector_jawiki.bin
 ```

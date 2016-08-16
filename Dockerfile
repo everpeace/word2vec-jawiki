@@ -5,16 +5,16 @@ MAINTAINER Shingo Omura <everpeace@gmail.com>
 ENV dep_pkgs 'curl git bash file sudo openssh openssl ruby ruby-dev libxml2-dev libxslt-dev'
 
 # tool versions
-ENV MECAB_VERSION 0.996
-ENV IPADIC_VERSION 2.7.0-20070801
-ENV WORD2VEC_GIT_BRANCH master
+ENV MECAB_VERSION         0.996
+ENV IPADIC_VERSION        2.7.0-20070801
+ENV WORD2VEC_GIT_BRANCH   master
 ENV CONVERTVEC_GIT_BRANCH master
-ENV WP2TEXT_VERSION 0.8.0
+ENV WP2TEXT_VERSION       0.8.0
 
 # tool download urls
-ENV mecab_url https://drive.google.com/uc?export=download&id=0B4y35FiV1wh7cENtOXlicTFaRUE
-ENV ipadic_url https://drive.google.com/uc?export=download&id=0B4y35FiV1wh7MWVlSDBCSXZMTXM
-ENV word2vec_git_url https://github.com/svn2github/word2vec.git
+ENV mecab_url          https://drive.google.com/uc?export=download&id=0B4y35FiV1wh7cENtOXlicTFaRUE
+ENV ipadic_url         https://drive.google.com/uc?export=download&id=0B4y35FiV1wh7MWVlSDBCSXZMTXM
+ENV word2vec_git_url   https://github.com/svn2github/word2vec.git
 ENV convertvec_git_url https://github.com/marekrei/convertvec
 
 # default environment varialbes for build-embedding-jawiki.sh
@@ -23,8 +23,8 @@ ENV MECAB_REPROCESS  0
 ENV MECAB_OPTIONS    -d /usr/local/lib/mecab/dic/mecab-ipadic-neologd/ -b 81920
 ENV WORD2VEC_OPTIONS -cbow 0 -size 200 -threads 2
 ENV JAWIKI_URL       https://dumps.wikimedia.org/jawiki/latest/jawiki-latest-pages-articles.xml.bz2
-ENV JAWIKI_FILENAME jawiki-pages-articles.xml.bz2
-ENV OUTPUT_DIR /var/jawiki
+ENV JAWIKI_FILENAME  jawiki-pages-articles.xml.bz2
+ENV OUTPUT_DIR       /var/jawiki
 
 # Install dependent tools
 RUN apk add --update --no-cache build-base

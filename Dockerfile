@@ -1,4 +1,4 @@
-FROM python:2.7-alpine
+FROM alpine:3.4
 MAINTAINER Shingo Omura <everpeace@gmail.com>
 
 # dependent packages

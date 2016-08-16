@@ -69,7 +69,7 @@ fi
 
 echo "Start building vector representations with word2vec for jawikisep.txt"
 word2vec -train jawikisep.txt \
-  -out vector_jawiki.bin \
+  -output vector_jawiki.bin \
   -binary 1 \
   ${WORD2VEC_OPTIONS}
 convertvec bin2txt \

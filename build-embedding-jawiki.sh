@@ -38,6 +38,7 @@ else
   echo "${OUTPUT_DIR}${JAWIKI_FILENAME} has already been downloaded.  Skipped."
 fi
 
+echo ""
 echo "Converting wikipedia dump data to plain txt."
 if [ ! -e jawiki.txt ]; then
   wp2txt -i ${JAWIKI_FILENAME} ${WP2TXT_OPTIONS}
@@ -47,6 +48,7 @@ else
   echo "jawiki.txt already exits.  Skipped."
 fi
 
+echo ""
 echo "Tokeninzing(wakatigaki) wikipedia dump data with mecab and mecab-ipadic-NEologd."
 if [ $MECAB_REPROCESS -eq 1 ]; then
   if [ -e jawikisep.txt ]; then
@@ -67,6 +69,7 @@ else
   fi
 fi
 
+echo ""
 echo "Start building vector representations with word2vec for jawikisep.txt"
 word2vec -train jawikisep.txt \
   -output vector_jawiki.bin \
@@ -77,6 +80,7 @@ convertvec bin2txt \
 echo "word2vec options: ${WORD2VEC_OPTIONS}" > vector_jawiki.meta
 echo "mecab options: ${MECAB_OPTIONS}" >> vector_jawiki.meta
 
+echo ""
 echo "Archiving word2vec outputs."
 tar zcvf vector_jawiki.tgz vector_jawiki.*
 
